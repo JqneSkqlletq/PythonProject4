@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Titl1e</title>
+</head>
+<body>
+<h1>something</h1>
+<hr>
+{% with message=get_flashed_messages() %}
+{% if message %}
+<h3>
+    <ul>
+        {% for mess in message %}
+        <li>{{ mess }}</li>
+        {% endfor %}
+    </ul>
+</h3>
+    {% endif %}
+{% endwith %}
+
+<a href="{{ url_for('index') }}">Index</a>
+<a href="{{ url_for('login') }}">Log In</a>
+{% block content %}  {% endblock %}
+</body>
+</html>
