@@ -1,9 +1,13 @@
 from flask import Flask, render_template, flash, redirect, url_for
-import os
+from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
+from database import Config
 from app.forms import LoginForm
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.urandom(24)
+app.config.from_object(Config)
+db = SQLAlchemy(app)
+migrate = Migrate(app,db)
 
 
 @app.route('/')
