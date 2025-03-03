@@ -1,5 +1,13 @@
 {% extends "base.html" %}
+
 {% block content %}
   <h2>Page Index</h2>
-
+  {% for tovar in tovars %}
+    <div>
+      <h5>{{ tovar.name }}</h5>
+      <p>{{ tovar.price }} рублей</p>
+      <p>{{ tovar.ostatok }} штук в наличии</p>
+    </div>
+  {% endfor %}
 {% endblock %}
+

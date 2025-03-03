@@ -16,11 +16,12 @@
         {% endfor %}
     </ul>
 </h3>
-    {% endif %}
+{% endif %}
 {% endwith %}
 
 <a href="{{ url_for('index') }}">Index</a>
 <a href="{{ url_for('login') }}">Log In</a>
+<a href="{{ url_for('tovar_add') }}">Add tovar</a>
 {% block content %}  {% endblock %}
 </body>
 </html>
